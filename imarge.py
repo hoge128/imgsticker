@@ -9,14 +9,15 @@ def marg_v(im1, im2):
     dst.paste(im2, (0, im1.height))
     return dst
 
-PATH = "."
-im = []
-count = 0
+if __name__ == "__main__":
+    PATH = "."
+    im = []
+    count = 0
 
-dir_list = os.listdir(PATH)
-for i in dir_list:
-    if ("png" in i or "jpg" in i) and count <= 1:
-        im.append(Image.open(i))
-        count += 1
+    dir_list = os.listdir(PATH)
+    for i in dir_list:
+        if ("png" in i or "jpg" in i) and count <= 1:
+            im.append(Image.open(i))
+            count += 1
 
-marg_v(im[0], im[1]).save("HOGE.png")
+    marg_v(im[0], im[1]).save("HOGE.png")
